@@ -39,6 +39,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.S3ClientOptions;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
@@ -371,6 +372,8 @@ public class S3AFileSystem extends FileSystem {
    */
   @VisibleForTesting
   AmazonS3 getAmazonS3Client() {
+    S3ClientOptions opt = S3ClientOptions.builder().setPathStyleAccess(true).disableChunkedEncoding().build();
+    s3.setS3ClientOptions(opt);
     return s3;
   }
 

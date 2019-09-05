@@ -317,6 +317,7 @@
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-s3</artifactId>
+      <version>1.10.77</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -338,6 +339,7 @@
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-sts</artifactId>
+      <version>1.10.77</version>
       <scope>test</scope>
     </dependency>
     <dependency>
